@@ -23,7 +23,7 @@ for (let i = 1; i < 1000; i++) {
 
 let destination = document.getElementById('Container')
 
-// This will make the width of each bar 2 times the original width //
+let secondOutput = document.getElementById('numberOutput')
 
 // This for loop will write onto our HTML and will also style the layout of the bar graph //
 
@@ -42,4 +42,19 @@ for (let j = 2; j < count.length; j++) {
     bar.appendChild(divText)
     graphRow.appendChild(bar)
     destination.appendChild(graphRow)
+}
+
+for (let w = 2; w < count.length; w++) {
+    let output = document.createElement('div')
+    output.style.display = 'flex'
+    let header = document.createElement('div')
+    header.style.width = '22px'
+    let headertext = document.createTextNode(possibleSums[w - 2] + ':')
+    header.appendChild(headertext)
+    output.appendChild(header)
+    let outputfreq = document.createElement('div')
+    let divText = document.createTextNode(count[w])
+    outputfreq.appendChild(divText)
+    output.appendChild(outputfreq)
+    secondOutput.appendChild(output)
 }
