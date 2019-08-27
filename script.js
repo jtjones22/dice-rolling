@@ -25,8 +25,6 @@ let destination = document.getElementById('Container')
 
 // This will make the width of each bar 2 times the original width //
 
-let widthMultiplier = 2
-
 // This for loop will write onto our HTML and will also style the layout of the bar graph //
 
 for (let j = 2; j < count.length; j++) {
@@ -39,8 +37,7 @@ for (let j = 2; j < count.length; j++) {
     graphRow.appendChild(header)
     let bar = document.createElement('div')
     bar.style.backgroundColor = 'orange'
-    bar.style.width = count[j]*widthMultiplier + 'px'
-    bar.style.border = '5px black solid'
+    bar.style.width = count[j] + 'px'
     let divText = document.createTextNode(count[j])
     bar.appendChild(divText)
     graphRow.appendChild(bar)
